@@ -1,0 +1,59 @@
+buffers {
+  size_kb: 65536
+  fill_policy: RING_BUFFER
+}
+buffers {
+  size_kb: 8192
+  fill_policy: RING_BUFFER
+}
+duration_ms: 8000
+
+data_sources {
+  config {
+    name: "linux.ftrace"
+    ftrace_config {
+      ftrace_events: "sched/sched_switch"
+      ftrace_events: "sched/sched_waking"
+      ftrace_events: "sched/sched_blocked_reason"
+      ftrace_events: "power/cpu_frequency"
+      ftrace_events: "power/cpu_idle"
+      ftrace_events: "power/gpu_frequency"
+      ftrace_events: "android_fs/android_fs_dataread_start"
+      ftrace_events: "android_fs/android_fs_dataread_end"
+      ftrace_events: "binder/binder_transaction"
+      ftrace_events: "binder/binder_transaction_received"
+      ftrace_events: "binder/binder_lock"
+      ftrace_events: "binder/binder_locked"
+      ftrace_events: "binder/binder_unlock"
+      atrace_categories: "view"
+      atrace_categories: "wm"
+      atrace_categories: "am"
+      atrace_categories: "gfx"
+      atrace_categories: "input"
+      atrace_categories: "sched"
+      atrace_categories: "freq"
+      atrace_categories: "idle"
+      atrace_categories: "res"
+      atrace_categories: "hwui"
+      atrace_categories: "hal"
+      atrace_categories: "aidl"
+      atrace_apps: "*"
+    }
+  }
+}
+
+data_sources {
+  config {
+    name: "linux.process_stats"
+    process_stats_config {
+      scan_all_processes_on_start: true
+      proc_stats_poll_ms: 1000
+    }
+  }
+}
+
+data_sources {
+  config {
+    name: "android.surfaceflinger.frametimeline"
+  }
+}
