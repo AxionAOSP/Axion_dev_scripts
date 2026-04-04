@@ -45,7 +45,7 @@ SORTED_KEYS=(
     "Pixel 9"
     "Pixel 8a"
     "Xiaomi 14"
-    "POCO F6 (duchamp)"
+    "POCO X6 Pro (duchamp)"
     "Redmi Note 13 Pro"
     "Pixel Fold Inner"
     "Pixel 9 Pro"
