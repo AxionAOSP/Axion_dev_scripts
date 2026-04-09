@@ -11,6 +11,7 @@ adb shell getprop sys.boot_completed | grep -q 1 || {
 echo -e "\033[0;32mDevice ready.\033[0m"
 
 declare -A DEVICES=(
+    ["Itel RS4"]="720x1612 320"
     ["Pixel Fold Outer"]="1080x2092 420"
     ["Pixel Fold Inner"]="1840x2208 420"
     ["Pixel 9 Pro"]="1280x2856 490"
@@ -76,6 +77,7 @@ SORTED_KEYS=(
     "OnePlus 13R"
     "Samsung S24 Ultra"
     "Tecno Pova LG7n"
+    "Itel RS4"
     "Tablet 10in"
     "High DPI"
 )
